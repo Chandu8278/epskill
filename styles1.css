@@ -1,0 +1,55 @@
+body{
+    background-image: url("homeimg2.jpg");
+    background-repeat:repeat;
+    background-size: 100%;
+    height: 100vh;
+    width: 100%;
+}
+#mainhead{
+    color: brown;
+    text-align: center;
+}
+#menubar a:hover{
+   background-color: black;
+   color: cornsilk;
+    
+}
+#menubar{
+    
+    color:black;
+}
+.select_page{
+    background-color:transparent;
+    color:rgb(221, 34, 34);
+    padding: 5px;
+    border:1px solid #fff;
+  } 
+  .right-menu{
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: #c52c2c;
+    min-width:158px;
+    z-index: 1;
+  }
+  .dropdown-menu a{
+    color: black;
+    padding: 12px 6px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-menu a:hover{
+    background-color: black;
+    color: #fff;
+  }
+  .right-menu:hover .dropdown-menu{
+    display: block;
+  }
+  .right-menu:hover .menu-button{
+    background-color: transparent;
+  }
+
+
