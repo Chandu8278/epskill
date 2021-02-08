@@ -8,7 +8,7 @@
         <style>
             #loginform{
                 
-                margin: 8% 35%;
+                margin: 8% 30%;
                 
             }
             h2 a{
@@ -16,6 +16,7 @@
                 margin-top: 10px;
                 padding: 10px;
                 text-decoration: none;
+              
             }
             input{
                 margin-left: 25%;
@@ -25,17 +26,166 @@
                 
             }
             #submit{
-                margin-left: 40%;
+                margin-left: 35%;
                 color: black;
             background-color:grey;
             padding: 10px;
             border-radius: 25px;
             border:1px solid black;
             }
-           .inform{
-               border: 2px solid black;
-           }
+           
         </style>
+        <script>
+          function validate()
+  {
+    var name = document.f.name.value;
+    var email = document.f.email.value;
+    var mobno = document.f.phone.value;
+    var atposition = email.indexOf('@');
+    var dotposition = email.lastIndexOf('.');
+    var psw = document.f.password.value;
+    var cpsw = document.f.cpassword.value;
+    var f=1;
+    if(name.length==0)
+    {
+           document.getElementById("fnameerr").innerHTML = "Please Enter Full Name";
+           document.getElementById("fnameerr").style.color="black";
+           f=0;
+           
+    }
+    else
+    {
+      document.getElementById("fnameerr").innerHTML = "";
+      
+    }
+  
+
+       
+    
+  //alert(atposition,dotposition);
+  if(email=="")
+  {
+           document.getElementById("emailerr").innerHTML = "Please enter Email";
+           document.getElementById("emailerr").style.color="black";
+           f=0;
+      
+    }
+    else if(atposition<5 || dotposition-atposition<5 && email!=""){
+      document.getElementById("emailerr").innerHTML = "Invalid Email";
+           document.getElementById("emailerr").style.color="black";
+           f=0;
+        
+    } 
+    else{
+      document.getElementById("emailerr").innerHTML = "";
+    }
+    if(mobno.length==0)
+    {
+      document.getElementById("mobileerr").innerHTML = "Please enter Mobile";
+      document.getElementById("mobileerr").style.color="black";
+      f=0;
+       
+    }
+    else if(isNaN(mobno) && mobno.length!=0)
+    {
+      document.getElementById("mobileerr").innerHTML = "Invalid Mobile";
+      document.getElementById("mobileerr").style.color="black";
+      f=0;
+       
+    }
+    else if(mobno.length!=10  && mobno.length!=0)
+    {
+      document.getElementById("mobileerr").innerHTML = "Invalid Mobile";
+      document.getElementById("mobileerr").style.color="black";
+      f=0;
+       
+    }
+    else if(mobno.charAt(0)<5  && mobno.length!=0)
+    {
+      document.getElementById("mobileerr").innerHTML = "Invalid mobile";
+      document.getElementById("mobileerr").style.color="black";
+      f=0;
+       
+    }
+    else
+    {
+      document.getElementById("mobileerr").innerHTML = "";
+      
+    }
+    if(psw=="")
+    {
+      document.getElementById("passworderr").innerHTML = "Please Enter Password";
+      document.getElementById("password").style.color="black";
+      f=0;   
+           
+    }
+    else
+    {
+      document.getElementById("passworderr").innerHTML = "";
+      
+    }
+    if(cpsw=="")
+    {
+      document.getElementById("cpassworderr").innerHTML = "Please Enter Password";
+      document.getElementById("cpassword").style.color="black";
+      f=0; 
+           
+    }
+    else if(cpsw!=psw){
+      document.getElementById("cpassworderr").innerHTML = "Passwords are Different";
+      document.getElementById("cpassword").style.color="black";
+      f=0;
+    }
+    else
+    {
+      document.getElementById("cpassworderr").innerHTML = "";
+      
+    }
+    if(f==0)
+    return false;
+   
+        }
+        function validatename(){
+          var name = document.f.name.value;
+          if(name.length==0)
+    {
+           document.getElementById("fnameerr").innerHTML = "Please Enter Full Name";
+           document.getElementById("fnameerr").style.color="black";
+           document.getElementById("name").focus()
+           
+    }
+    else
+    {
+      document.getElementById("fnameerr").innerHTML = "";
+      
+    }
+
+        }
+        function validateemail(){
+          var email = document.f.email.value;
+          var atposition = email.indexOf('@');
+    var dotposition = email.lastIndexOf('.');
+          if(email=="")
+  {
+           document.getElementById("emailerr").innerHTML = "Please enter Email";
+           document.getElementById("emailerr").style.color="black";
+           document.getElementById("email").focus()
+           f=0;
+      
+    }
+    else if(atposition<5 || dotposition-atposition<5 && email!=""){
+      document.getElementById("emailerr").innerHTML = "Invalid Email";
+           document.getElementById("emailerr").style.color="black";
+           document.getElementById("email").focus()
+           f=0;
+        
+    } 
+    else{
+      document.getElementById("emailerr").innerHTML = "";
+    }
+    
+        }
+        </script>
     </head>
     <body>
         <header>
@@ -49,7 +199,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="home.html">Home <span class="sr-only"></span></a>
+                    <a class="nav-link" href="home1.html">Home <span class="sr-only"></span></a>
                   </li>
                   <li class="nav-item active">
                     <a class="nav-link" href="about.html">How It Works? <span class="sr-only"></span></a>
@@ -59,10 +209,10 @@
                 <div class="right-menu">
                     <button class="select_page">Checkout !</button>
                     <div class="dropdown-menu">
-                        <a href="home_tutor.html">Home Tutor</a>
-                        <a href="gym.html">Gym Trainer</a>
-                        <a href="sports_tutor.html">Sports Coach</a>
-                        <a href="yoga_tutor.html">Yoga Master</a>
+                        <a href="\carousel\index.html">Home Tutor</a>
+                        <a href="carousel\gym_trainer.html">Gym Trainer</a>
+                        <a href="carousel\sports_tutor.html">Sports Coach</a>
+                        <a href="carousel\yoga_tutor.html">Yoga Master</a>
                     </div>
                   </div>
                   &nbsp;&nbsp;
@@ -76,14 +226,14 @@
     
         </header>
         <h1 id="mainhead" style="text-align: center;">Share Your Knowledge</h1>
-        <form id="loginform">
+        <form id="loginform" name="f" action="successregister.html" onsubmit="return validate()">
             <div class="inform">
                 <h2><a href="register.html">Registration</a></h2>
-            <input type="text" name="u" placeholder="User Name"><br>
-            <input type="text" name="u" placeholder="E-Mail"><br>
-            <input type="text" name="u" placeholder="phone no."><br>
-            <input type="password" name="p" placeholder="Password"><br>
-            <input type="password" name="p" placeholder="Confirm Password"><br>
+            <input type="text" name="name" id="name" placeholder="User Name" onblur="validatename()"><i style="color: black;" id="fnameerr"></i><br>
+            <input type="text" name="email" id="email" placeholder="E-Mail" onblur="validateemail()"><i style="color: black;" id="emailerr"></i><br>
+            <input type="text" name="phone" id="phone" placeholder="phone no." onblur="validatephone()"><i style="color: black;" id="mobileerr"></i><br>
+            <input type="password" name="password" id="password" placeholder="Password" onblur="validatepassword()"><i style="color: black;" id="passworderr"></i><br>
+            <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" onblur="validatecpassword()"><i style="color: black;" id="cpassworderr"></i><br>
             <input id="submit" type="submit" name="submit"><br><br>
            </div>
          </form>
