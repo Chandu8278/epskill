@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +24,7 @@
     <style>
         #loginform{
             
-            margin: 10% 35%;
+            margin: 5% 35%;
            
             
         }
@@ -43,7 +45,7 @@
             padding: 10px;
             border-radius: 25px;
         }
-         #endtext{
+        #endtext{
             margin-left: 23%;
             padding: 15px;
             text-decoration: none;
@@ -81,14 +83,20 @@
             </nav>
     
         </header>
-        <h1 id="mainhead" style="text-align: center;">Share Your Knowledge</h1>
+        <% String email = request.getParameter("email"); %>
+        <h1 id="mainhead" style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;Share Your Knowledge</h1>
+        <br><br>
+        <h2 style="margin-left:550px;">Invalid Password Try Again</h2>
         <form id="loginform" action="login.jsp">
-           <h2>LOGIN</h2>
-           <input type="text" name="u" placeholder="Enter Username"><br>
+           
+           <input type="text" name="u" placeholder="" value=<%=email %>><br>
            <input type="password" name="pwd" placeholder="Enter Password" id="myInput" required><br>
 		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" onclick="myFunction()" >Show Password<br>
            <input id="submit" type="submit" name="submit"><br><br>
            <a id="endtext" href="register.html">Don't have an account? click here</a>
+           <br>
+                      <a id="endtext" href="login3.jsp?email=<%=email%>">&nbsp;&nbsp;&nbsp;Forgot Password ? click here</a>
+           
         </form>
     </body>
 </html>

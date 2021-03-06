@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+<%@ page  language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="javax.servlet.*,java.sql.*,java.io.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
     <head>
         <title>Home</title>
 
@@ -15,6 +18,13 @@
     
     </style>
     <body>
+    <% 
+    String email = (String)session.getAttribute("email");
+    String pwd = (String)session.getAttribute("pwd");
+    
+    if(email!=null && pwd!=null){
+    %>
+    
 
 
     <header>
@@ -28,31 +38,33 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
             <ul class="navbar-nav mr-auto">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              
 
               <li class="nav-item active">
-                <a class="nav-link" href="home.html" style="color: black;">Home <span class="sr-only"></span></a>
+                <a class="nav-link" href="home1.html" style="color: black;">Home <span class="sr-only"></span></a>
               </li>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <li class="nav-item active">
-                <a class="nav-link" href="about.html" style="color: black;">How It Works? <span class="sr-only"></span></a>
-              </li> 
+              
             </ul>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="right-menu">
               <button class="select_page"style="color: black;">Checkout !</button>
               <div class="dropdown-menu">
-                  <a href="\carousel\index.html">Home Tutor</a>
-                  <a href="\carousel\gym_trainer.html">Gym Trainer</a>
-                  <a href="\carousel\sports_tutor.html">Sports Coach</a>
-                  <a href="\carousel\yoga_tutor.html">Yoga Master</a>
+                  <a href="../carousel/index.html">Home Tutor</a>
+                  <a href="../carousel/gym_trainer.html">Gym Trainer</a>
+                  <a href="../carousel/sports_tutor.html">Sports Coach</a>
+                  <a href="../carousel/yoga_tutor.html">Yoga Master</a>
               </div>
             </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="button_of">
+              <a href="logout.jsp"><button onclick="myLogout()"  type="button" class="btn btn-danger" >Log out</button></a>
+            </div>
+            &nbsp;&nbsp;
             <div id="button_of">
               <a href="profile.html"><button  type="button" class="btn btn-danger" >Profile</button></a>
             </div>
@@ -63,10 +75,26 @@
     </header>
     <h1 id="mainhead" style="text-align: center;">Share Your Knowledge</h1>
     <center>
-      <img src="\work\sky2.png"  height="175px" width="175px" style="border-radius: 50px;">
+      <img src="sky2.png"  height="175px" width="175px" style="border-radius: 50px;">
     <div id="home_matter">
+    <%
+    try {
+		Connection con = null;
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
+        PreparedStatement pstmt = con.prepareStatement("select name from registeruser where email=?");
+        pstmt.setString(1,email);
+		
+		ResultSet rs = pstmt.executeQuery(); 
+		if(rs.next()!=true){}
+		
+	
+    
+    
+    %>
+    
          <br>
-         <h1>Welcome To Our Website :)</h1><br>
+         <h1> Welcome To Our Website, <%= rs.getString(1)%> :)</h1><br>
          <p style="font-size: 1.2em;">Are you Facing any problem in finding some tutors.I think it's enough for to search for them around here and there.</p>
          <p style="font-size: 1.2em;">You can simply visit our website and Find some tutors you want.</p>
          <p>What are you waiting for if you are not Login or Register Then go on register from the below links.</p>
@@ -79,7 +107,10 @@
     -->
     </div>
   </center>
-
+<%}
+	catch(Exception e) {
+		out.println(e);
+	} %>
   <center>
     <div class="row row-cols-1 row-cols-md-3" style="padding: 20px;">
       <div class="col mb-4" style="">
@@ -129,6 +160,15 @@
     
     </div>
   </center>
- 
+  <% }
+    else{
+    	response.sendRedirect("login.html");
+    }
+    %>
+    <script>
+        function myLogout(){
+        	alert("You are being Loged out");
+        }
+        </script>
     </body>
 </html>
