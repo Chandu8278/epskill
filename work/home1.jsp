@@ -41,7 +41,7 @@
               
 
               <li class="nav-item active">
-                <a class="nav-link" href="home1.html" style="color: black;">Home <span class="sr-only"></span></a>
+                <a class="nav-link" href="home1.jsp" style="color: black;">Home <span class="sr-only"></span></a>
               </li>
               
             </ul>
@@ -94,7 +94,7 @@
     %>
     
          <br>
-         <h1> Welcome To Our Website, <%= rs.getString(1)%> :)</h1><br>
+         <h1> Welcome To Our Website, <u><%= rs.getString(1)%></u> :)</h1><br>
          <p style="font-size: 1.2em;">Are you Facing any problem in finding some tutors.I think it's enough for to search for them around here and there.</p>
          <p style="font-size: 1.2em;">You can simply visit our website and Find some tutors you want.</p>
          <p>What are you waiting for if you are not Login or Register Then go on register from the below links.</p>
@@ -120,7 +120,7 @@
             <h5 class="card-title">Yoga Tutor</h5>
             <p class="card-text">A yogi is a practitioner of yoga, including a sannyasin or practitioner of meditation in Indian religions. The feminine form, sometimes used in English, is yogini.</p>
             <p>Are you feeling depressed and disturbed then you can contact a yoga trainer near you in a single click</p>
-            <a href="\carousel\yoga_tutor.html" class="btn btn-primary">Click Here</a>
+            <a href="../carousel\yoga_tutor.html" class="btn btn-primary">Click Here</a>
           </div>
         </div>
       </div>
@@ -130,7 +130,7 @@
           <div class="card-body">
             <h5 class="card-title">Gym Trainer</h5>
             <p class="card-text">GYM Trainer is an application of Fitness and Bodybuilding that, in addition to consult exercises, diets, healthy recipes, workouts, you can create your own, upload them to the net, consult the workouts of other users and save them.</p>
-            <a href="\carousel\gym_trainer.html" class="btn btn-primary">Click Here</a>
+            <a href="../carousel\gym_trainer.html" class="btn btn-primary">Click Here</a>
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@
             <h5 class="card-title">Sports Tutor</h5>
             <p class="card-text">Sports Tutor is a self-paced learning portal for everyone involved in the play, active recreation and sport sector.
             Sports coaches train and coach amateur and professional athletes.As a sports coach, you'll ensure the physical and mental wellbeing of the athletes you work with.</p>
-            <a href="\carousel\sports_tutor.html" class="btn btn-primary">Click Here</a>
+            <a href="../carousel\sports_tutor.html" class="btn btn-primary">Click Here</a>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
             <h5 class="card-title">Home Tutor</h5>
             <p class="card-text">We help students and tutors find each other. Students can find tutors for all subjects and tutors can find home tuition needs posted by students.Home tutoring experts available offering several tuition classes and courses.</p>
             <p>Waiting for what ? Go on and Signup ?</p>
-            <a href="\carousel\index.html" class="btn btn-primary">Click Here</a>
+            <a href="../carousel\index.html" class="btn btn-primary">Click Here</a>
           </div>
         </div>
       </div>

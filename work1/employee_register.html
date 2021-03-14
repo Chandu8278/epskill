@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Register</title>
+        <link href="styles1.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+        <style>
+            #loginform{
+                
+                margin: 8% 30%;
+                
+            }
+            h2 a{
+                margin-left: 18%;
+                margin-top: 10px;
+                padding: 10px;
+                text-decoration: none;
+              
+            }
+            input{
+                margin-left: 25%;
+                padding: 5px;
+                margin-top: 25px;
+                font-size: 1em;
+                
+            }
+            #submit{
+                margin-left: 35%;
+                color: black;
+            background-color:grey;
+            padding: 10px;
+            border-radius: 25px;
+            border:1px solid black;
+            }
+           
+        </style>
+        <script>
+          function validate()
+  {
+    var name = document.f.name.value;
+    var email = document.f.email.value;
+    var mobno = document.f.phone.value;
+    var atposition = email.indexOf('@');
+    var dotposition = email.lastIndexOf('.');
+    var psw = document.f.password.value;
+    var cpsw = document.f.cpassword.value;
+    var f=1;
+    if(name.length==0)
+    {
+           document.getElementById("fnameerr").innerHTML = "Please Enter Full Name";
+           document.getElementById("fnameerr").style.color="black";
+           f=0;
+           
+    }
+    else
+    {
+      document.getElementById("fnameerr").innerHTML = "";
+      
+    }
+  
+
+       
+    
+  //alert(atposition,dotposition);
+  if(email=="")
+  {
+           document.getElementById("emailerr").innerHTML = "Please enter Email";
+           document.getElementById("emailerr").style.color="black";
+           f=0;
+      
+    }
+    else if(atposition<5 || dotposition-atposition<5 && email!=""){
+      document.getElementById("emailerr").innerHTML = "Invalid Email";
+           document.getElementById("emailerr").style.color="black";
+           f=0;
+        
+    } 
+    else{
+      document.getElementById("emailerr").innerHTML = "";
+    }
+    if(mobno.length==0)
+    {
+      document.getElementById("mobileerr").innerHTML = "Please enter Mobile";
+      document.getElementById("mobileerr").style.color="black";
+      f=0;
+       
+    }
+    else if(isNaN(mobno) && mobno.length!=0)
+    {
+      document.getElementById("mobileerr").innerHTML = "Invalid Mobile";
+      document.getElementById("mobileerr").style.color="black";
+      f=0;
+       
+    }
+    else if(mobno.length!=10  && mobno.length!=0)
+    {
+      document.getElementById("mobileerr").innerHTML = "Invalid Mobile";
+      document.getElementById("mobileerr").style.color="black";
+      f=0;
+       
+    }
+    else if(mobno.charAt(0)<5  && mobno.length!=0)
+    {
+      document.getElementById("mobileerr").innerHTML = "Invalid mobile";
+      document.getElementById("mobileerr").style.color="black";
+      f=0;
+       
+    }
+    else
+    {
+      document.getElementById("mobileerr").innerHTML = "";
+      
+    }
+    if(psw=="")
+    {
+      document.getElementById("passworderr").innerHTML = "Please Enter Password";
+      document.getElementById("password").style.color="black";
+      f=0;   
+           
+    }
+    else
+    {
+      document.getElementById("passworderr").innerHTML = "";
+      
+    }
+    if(cpsw=="")
+    {
+      document.getElementById("cpassworderr").innerHTML = "Please Enter Password";
+      document.getElementById("cpassword").style.color="black";
+      f=0; 
+           
+    }
+    else if(cpsw!=psw){
+      document.getElementById("cpassworderr").innerHTML = "Passwords are Different";
+      document.getElementById("cpassword").style.color="black";
+      f=0;
+    }
+    else
+    {
+      document.getElementById("cpassworderr").innerHTML = "";
+      
+    }
+    if(f==0)
+    return false;
+   
+        }
+        function validatename(){
+          var name = document.f.name.value;
+          if(name.length==0)
+    {
+           document.getElementById("fnameerr").innerHTML = "Please Enter Full Name";
+           document.getElementById("fnameerr").style.color="black";
+           document.getElementById("name").focus()
+           
+    }
+    else
+    {
+      document.getElementById("fnameerr").innerHTML = "";
+      
+    }
+
+        }
+        function validateemail(){
+          var email = document.f.email.value;
+          var atposition = email.indexOf('@');
+    var dotposition = email.lastIndexOf('.');
+          if(email=="")
+  {
+           document.getElementById("emailerr").innerHTML = "Please enter Email";
+           document.getElementById("emailerr").style.color="black";
+           document.getElementById("email").focus()
+           f=0;
+      
+    }
+    else if(atposition<5 || dotposition-atposition<5 && email!=""){
+      document.getElementById("emailerr").innerHTML = "Invalid Email";
+           document.getElementById("emailerr").style.color="black";
+           document.getElementById("email").focus()
+           f=0;
+        
+    } 
+    else{
+      document.getElementById("emailerr").innerHTML = "";
+    }
+    
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+      
+        
+            <nav class="navbar navbar-expand-lg navbar-light bg-info" >
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  
+                  <li class="nav-item active">
+                    <a class="nav-link" href="../work/about.html">How It Works? <span class="sr-only"></span></a>
+                  </li>
+                  
+                </ul>
+                
+                  &nbsp;&nbsp;
+                <!--  <div id="button_of" style="text-align: right;">
+                    <a href="../register.html"><button type="button" class="btn btn-secondary">Register</button></a>
+                    <a href="../login.html"><button  type="button" class="btn btn-danger" >Login</button></a>
+                </div>-->
+                
+              </div>
+            </nav>
+    
+        </header>
+        <h1 id="mainhead" style="text-align: center;color:grey">Share Your Knowledge</h1>
+        <form id="loginform" name="f" action="employee_register.jsp" onsubmit="return validate()" method="post">
+            <div class="inform">
+                <h2><a style="color:red">Employee Registration</a></h2>
+            <input type="text" name="name" id="name" placeholder="User Name" onblur="validatename()"><i style="color: black;" id="fnameerr"></i><br>
+            <input type="radio" name="gender" value="male" placeholder="male" required>Male
+            <input type="radio" name="gender" value="female" placeholder="female" required>Female
+            <input type="text" name="email" id="email" placeholder="E-Mail" onblur="validateemail()"><i style="color: black;" id="emailerr"></i><br>
+            <input type="password" name="password" id="password" placeholder="Password" onblur="validatepassword()"><i style="color: black;" id="passworderr"></i><br>
+            <input type="text" name="phone" id="phone" placeholder="phone no." onblur="validatephone()"><i style="color: black;" id="mobileerr"></i><br>
+            <input type="text" name="location" id="location" placeholder="location" ><i style="color: black;" id="cpassworderr"></i><br>
+            <input id="submit" type="submit" name="submit"><br><br>
+           </div>
+         </form>
+    </body>
+</html>
