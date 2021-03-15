@@ -9,9 +9,65 @@
     <head>
         <title>Home</title>
 
-        <link href="styles1.css" rel="stylesheet">
+      
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <style>
+        body{
+        background-color:black;
+        color:white;
+        }
+        .card-title,.card-text{
+        color:black;
+        }
+        #mainhead{
+    color: brown;
+    text-align: center;
+    color:red;
+}
+#menubar a:hover{
+   background-color: black;
+   color: cornsilk;
+    
+}
+#menubar{
+    
+    color:black;
+}
+.select_page{
+    background-color:transparent;
+    color:rgb(221, 34, 34);
+    padding: 5px;
+    border:1px solid #fff;
+  } 
+  .right-menu{
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: #c52c2c;
+    min-width:158px;
+    z-index: 1;
+  }
+  .dropdown-menu a{
+    color: black;
+    padding: 12px 6px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-menu a:hover{
+    background-color: black;
+    color: #fff;
+  }
+  .right-menu:hover .dropdown-menu{
+    display: block;
+  }
+  .right-menu:hover .menu-button{
+    background-color: transparent;
+  }
         
+        </style>
 
     </head>
     <style>
@@ -66,7 +122,7 @@
             </div>
             &nbsp;&nbsp;
             <div id="button_of">
-              <a href="profile.html"><button  type="button" class="btn btn-danger" >Profile</button></a>
+              <a href="profile.jsp"><button  type="button" class="btn btn-danger" >Profile</button></a>
             </div>
             
           </div>

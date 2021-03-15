@@ -16,9 +16,9 @@
 			Connection con = null;
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
-            PreparedStatement pstmt = con.prepareStatement("select email,password from admin where email=?");
+            PreparedStatement pstmt = con.prepareStatement("select name from admin where email=? and password=?");
             pstmt.setString(1,email);
-            
+            pstmt.setString(2,pwd);
 			
 			ResultSet rs = pstmt.executeQuery(); 
 			
@@ -26,7 +26,7 @@
             	 
             	 
             	 //out.println("<h1 align:center>Login Successfull</h1>");
-            	 response.sendRedirect("index.html");
+            	 response.sendRedirect("adminhome.jsp?name="+rs.getString(1)+"");
              }
              
 		   else 

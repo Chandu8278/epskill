@@ -6,34 +6,16 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
         <style>
-            #loginform{
-                
-                margin: 8% 30%;
-                
-            }
-            h2 a{
-                margin-left: 18%;
-                margin-top: 10px;
-                padding: 10px;
-                text-decoration: none;
-              
-            }
-            input{
-                margin-left: 25%;
-                padding: 5px;
-                margin-top: 25px;
-                font-size: 1em;
-                
-            }
-            #submit{
-                margin-left: 35%;
-                color: black;
-            background-color:grey;
-            padding: 10px;
-            border-radius: 25px;
-            border:1px solid black;
-            }
-           
+            
+          h2{
+          color:red;
+          text-align:center;
+          }
+        body{
+        background-color:black;
+        color:white;
+        }
+       
         </style>
         <script>
           function validate()
@@ -216,18 +198,56 @@
     
         </header>
         <h1 id="mainhead" style="text-align: center;color:grey">Share Your Knowledge</h1>
+        <br><br><br><br>
+        <h2>Employee Registration</h2><br>
         <form id="loginform" name="f" action="employee_register.jsp" onsubmit="return validate()" method="post">
-            <div class="inform">
-                <h2><a style="color:red">Employee Registration</a></h2>
-            <input type="text" name="name" id="name" placeholder="User Name" onblur="validatename()"><i style="color: black;" id="fnameerr"></i><br>
-            <input type="radio" name="gender" value="male" placeholder="male" required>Male
-            <input type="radio" name="gender" value="female" placeholder="female" required>Female
-            <input type="text" name="email" id="email" placeholder="E-Mail" onblur="validateemail()"><i style="color: black;" id="emailerr"></i><br>
-            <input type="password" name="password" id="password" placeholder="Password" onblur="validatepassword()"><i style="color: black;" id="passworderr"></i><br>
-            <input type="text" name="phone" id="phone" placeholder="phone no." onblur="validatephone()"><i style="color: black;" id="mobileerr"></i><br>
-            <input type="text" name="location" id="location" placeholder="location" ><i style="color: black;" id="cpassworderr"></i><br>
-            <input id="submit" type="submit" name="submit"><br><br>
-           </div>
+           <table align="center" width=400 height=300>
+<tr>
+<td>Enter Name</td>
+<td><input type="text" name="name" placeholder="Name" required></td>
+</tr>
+<br>
+<tr>
+<td>Select Gender</td>
+<td><input type="radio" name="gender" value="male" placeholder="male" required>Male&nbsp;&nbsp;<input type="radio" name="gender" value="female" placeholder="female" required>Female</td>
+</tr>
+<tr>
+<td>Enter Email Address</td>
+<td><input type="email" name="email" placeholder="Email Address" required></td>
+</tr>
+<tr>
+<td>Enter Password</td>
+<td><input type="password" name="pwd" placeholder="Password" required></td>
+</tr>
+<tr>
+<td>Enter Mobile Number</td>
+<td><input type="number" name="mob" placeholder="Mobile Number" required></td>
+</tr>
+<tr>
+<td>Select Department</td>
+<td>
+<select name="dept" required>
+<option value="">--Select--</option>
+<option value="sports coach">sports coach</option>
+<option value="home tutor">home tutor</option>
+<option value="gym trainer">gym trainer</option>
+<option value="yoga master">yoga master</option>
+
+</select>
+
+
+</td>
+</tr>
+<tr>
+<td>Enter Location</td>
+<td><input type="text" name="loc" placeholder="Location" required></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit"  value="Register"></td>
+</tr>
+</table>
+
          </form>
     </body>
 </html>

@@ -7,16 +7,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Employee Register</title>
+
 </head>
 <body>
 <%
 String name = request.getParameter("name");
 String gender = request.getParameter("gender");
 String email = request.getParameter("email");
-String pwd = request.getParameter("password");
-String phone = request.getParameter("phone");
-String location = request.getParameter("location");
-
+String pwd = request.getParameter("pwd");
+String mob = request.getParameter("mob");
+String dept = request.getParameter("dept");
+String loc = request.getParameter("loc");
+String status = "not_accepted";
+int id = (int)(Math.random()*99999)+1;
 
 try
 {
@@ -26,34 +29,30 @@ try
   
   //tnsnames.oracle
   con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
-PreparedStatement pstmt = con.prepareStatement(" insert into employee values(?,?,?,?,?,?,?) ");
-int id = (int)(Math.random()*99999)+1;
-
-pstmt.setInt(1,id);
+PreparedStatement pstmt = con.prepareStatement(" insert into employee values(?,?,?,?,?,?,?,?,?) ");
+  
+pstmt.setInt(1, id);
 pstmt.setString(2, name);
 pstmt.setString(3, gender);
 pstmt.setString(4, email);
 pstmt.setString(5, pwd);
-pstmt.setString(6, phone);
-pstmt.setString(7, location);
-
-
+pstmt.setString(6, mob);
+pstmt.setString(7, dept);
+pstmt.setString(8, loc);
+pstmt.setString(9,status);
 int n=pstmt.executeUpdate();
-
+//at a time only one record is inserted so, n=1
 if(n>0)
 {
-   
-   %>
-   
-   <!--<jsp:include page="login.html"></jsp:include>-->
-   <center><h1>Your Request is Sent to Admin </h1><br>
-           <h2>Your Status will be updated soon</h2>   
-   </center>
-   <%
+  
+  %>
+  <h1>Your Registration is Successfull</h1>
+  <a href="statusbyid.jsp">View Status</a>
+  <% 
 }
 else
 {
-   out.println("Unable Register");
+   out.println("Unable to Register");
 
 }
 
@@ -62,6 +61,7 @@ catch(Exception e)
 {
   out.println(e);
 }
+
 
 %>
 </body>
