@@ -18,6 +18,14 @@ text-decoration:none;
 padding:10px;
 color:red;
 }
+td
+{
+color:white;
+}
+h2
+{
+color:grey;
+}
 </style>
 </head>
 <body>
@@ -44,12 +52,12 @@ try {
 			out.println("<table align=center border='2'>");
 			out.println("<tr bgcolor='lightblue'>");
 			
-			out.println("<td>Name</td>");
+			out.println("<th>Name</th>");
 			
-			out.println("<td>Email</td>");
+			out.println("<th>Email</th>");
 		
-			out.println("<td>Mobile no.</td>");
-			out.println("<td>Password</td>");
+			out.println("<th>Mobile no.</th>");
+			out.println("<th>Password</th>");
 			out.println("</tr>");
 			 
 			while(rs.next()) {
