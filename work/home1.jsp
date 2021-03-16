@@ -105,10 +105,10 @@
             <div class="right-menu">
               <button class="select_page"style="color: black;">Checkout !</button>
               <div class="dropdown-menu">
-                  <a href="../carousel/index.html">Home Tutor</a>
-                  <a href="../carousel/gym_trainer.html">Gym Trainer</a>
-                  <a href="../carousel/sports_tutor.html">Sports Coach</a>
-                  <a href="../carousel/yoga_tutor.html">Yoga Master</a>
+                  <a href="../carousel/index.jsp">Home Tutor</a>
+                  <a href="../carousel/gym_trainer.jsp">Gym Trainer</a>
+                  <a href="../carousel/sports_tutor.jsp">Sports Coach</a>
+                  <a href="../carousel/yoga_tutor.jsp">Yoga Master</a>
               </div>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,7 +208,7 @@
             <h5 class="card-title">Home Tutor</h5>
             <p class="card-text">We help students and tutors find each other. Students can find tutors for all subjects and tutors can find home tuition needs posted by students.Home tutoring experts available offering several tuition classes and courses.</p>
             <p>Waiting for what ? Go on and Signup ?</p>
-            <a href="../carousel\index.html" class="btn btn-primary">Click Here</a>
+            <a href="../carousel\index.jsp" class="btn btn-primary">Click Here</a>
           </div>
         </div>
       </div>

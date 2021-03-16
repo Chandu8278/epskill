@@ -1,4 +1,8 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="javax.servlet.*,java.sql.*,java.io.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -27,6 +31,9 @@
           font-size: 3.5rem;
         }
       }
+      td,th{
+        padding:20px;
+        }
     </style>
 
     
@@ -155,61 +162,57 @@
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
-    <h1>Reviews</h1>
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">image</text></svg>
-
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">image</text></svg>
-
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><img src="../work/cource_1.png" width="500px" height="500px" style="margin-top: -500px;"></svg>
-
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
 
 
-  <!-- FOOTER -->
-  <footer class="container">
-    
-    <p>&copy; 2020-2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-  </footer>
-</main>
 
-    
-
+    <%
+try {
+			
+			Connection con = null;
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
+			
+			PreparedStatement pstmt = con.prepareStatement("select * from employee where status='accepted'");
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			 out.println("<h2 align=center></h2>");
+			
+			out.println("<table align=center>");
+			out.println("<tr bgcolor='lightblue'>");
+			out.println("<th>Employee id</th>");			
+			out.println("<th>Name</th>");	
+			out.println("<th>Gender</th>");
+			out.println("<th>Email</th>");
+		
+			out.println("<th>Mobile</th>");
+			
+			out.println("<th>Location</th>");
+			out.println("<th>Book Now</th>");
+			out.println("</tr>");
+			 
+			while(rs.next()) {
+				
+				out.println("<tr table='1'>");
+				out.println("<td>"+rs.getString(1)+"</td>");
+				out.println("<td>"+rs.getString(2)+"</td>");
+				out.println("<td>"+rs.getString(3)+"</td>");
+				out.println("<td>"+rs.getString(4)+"</td>");
+				
+				out.println("<td>"+rs.getString(6)+"</td>");
+			
+				out.println("<td>"+rs.getString(8)+"</td>");
+				out.println("<td><a href='../pricing/index.html'>Book Now</a></td>");
+			}
+			out.println("</table>");
+			
+		}
+		catch(Exception e) {
+			out.println(e); 
+		}
+%>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       
