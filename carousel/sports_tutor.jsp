@@ -34,6 +34,17 @@
       td,th{
         padding:20px;
         }
+        #txt{
+        width:500px;
+        border-radius:10px;
+        }
+         form{
+        float:left;
+        }
+        butoon{
+        
+        float:left;
+        }
     </style>
 
     
@@ -52,7 +63,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="../work/home1.html">Home</a><!--Changed-->
+            <a class="nav-link" aria-current="page" href="../work/home1.jsp">Home</a><!--Changed-->
           </li>
           
           <li class="nav-item active">
@@ -162,19 +173,37 @@
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
+    
+    <form action="sports_tutor.jsp" method="post">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input id="txt" type="text" name="searchname" placeholder="Enter Location/Name">
+    <input type="submit" value="Search">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    </form>
+    <button onclick="location.href = 'sports_tutor1.jsp';">SortByLocation</button>
+    <button>SortByRating</button>
 
 
 
     <%
 try {
 			
-			Connection con = null;
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
-			
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
-			
-			PreparedStatement pstmt = con.prepareStatement("select * from employee where status='accepted'");
+	String variable =  request.getParameter("searchname");
+	
+	Connection con = null;
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	
+	
+	con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
+	PreparedStatement pstmt;
+	if(variable==null || variable==""){
+	pstmt = con.prepareStatement("select * from employee where status='accepted'");
+	}
+	else
+	{
+	pstmt = con.prepareStatement("select * from employee where location='"+variable+"' or name='"+variable+"'");
+	}
 			
 			ResultSet rs = pstmt.executeQuery();
 			

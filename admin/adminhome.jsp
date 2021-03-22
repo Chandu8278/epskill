@@ -25,10 +25,15 @@ color:red;
 String name = request.getParameter("name");
 %>
 <h1>Welcome admin:<%=name %></h1>
-
+<div>
 <a href="adminhome2.jsp">Home</a>
 <a href="viewusers.jsp">view users</a>
 <a href="viewemployee.jsp">view employees</a>
 <a href="viewrequests.jsp">view requests</a>
+</div>
+<br>
+<center>
+<img src="admin.jpg" width="95%">
+</center>
 </body>
 </html>

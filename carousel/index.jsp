@@ -32,8 +32,24 @@
         td,th{
         padding:20px;
         }
+        #txt{
+        width:500px;
+        border-radius:10px;
+        }
+        form{
+        float:left;
+        }
+        butoon{
         
-        
+        float:left;
+        }
+        #middle_sentence{
+        font-size:1.2em;
+        border:5px solid black;
+        padding:10px;
+        background-color:skyblue;
+        width:70%;
+        }
         
       }
     </style>
@@ -116,21 +132,21 @@
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><img  src="../work/cource_1.png" width="150px" height="150px" style="border-radius: 100px; margin-left:-120px;"></svg>
 
-        <h2>Dr.Yeshwanth Reddy</h2>
+        <h2>Name</h2>
         <p>Details</p>
         <p><a class="btn btn-secondary" href="../pricing/index.html" role="button">Book Now! &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><img  src="../work/cource_3.png" width="150px" height="150px" style="border-radius: 100px; margin-left:-120px;"></svg>
 
-        <h2>Mrs.Sheela</h2>
+        <h2>Name</h2>
         <p>Details</p>
         <p><a class="btn btn-secondary" href="../pricing/index.html" role="button">Book Now! &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><img  src="../work/comment_2.png" width="150px" height="150px" style="border-radius: 100px; margin-left:-120px;"></svg>
 
-        <h2>Mr.Chandra Sekhar</h2>
+        <h2>Name</h2>
         <p>Details</p>
         <p><a class="btn btn-secondary" href="../pricing/index.html" role="button">Book Now! &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
@@ -162,20 +178,46 @@
 
 
     <!-- START THE FEATURETTES -->
-
     <hr class="featurette-divider">
+    <center>
+    <div id="middle_sentence">
+    <p>If you didn't know anyone specifically to book a slot with a particular tutor then you can directly click here to book any of the tutors in this website</p>
+    <p><a class="btn btn-secondary" href="../pricing/index.html" role="button">Book Now! &raquo;</a></p>
+    </div>
+    </center>
+    <br><br>
+    <form action="index.jsp" method="post">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input id="txt" type="text" name="searchname" placeholder="Enter Location/Name">
+    <input type="submit" value="Search">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
+    
+    
+    </form>
+    <button onclick="location.href = 'index1.jsp';">SortByLocation</button>
+    <button>SortByRating</button>
     <%
 try {
+	
+			String variable =  request.getParameter("searchname");
 			
 			Connection con = null;
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			
 			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
+			PreparedStatement pstmt;
 			
-			PreparedStatement pstmt = con.prepareStatement("select * from employee where status='accepted'");
+			if(variable==null || variable=="")
+			{
+			pstmt = con.prepareStatement("select * from employee where status='accepted'");
+			}
 			
+			else
+			{
+			pstmt = con.prepareStatement("select * from employee where location='"+variable+"' or name='"+variable+"'");
+			}
 			ResultSet rs = pstmt.executeQuery();
 			
 			 out.println("<h2 align=center></h2>");

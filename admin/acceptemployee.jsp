@@ -7,11 +7,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body{
+background-color:black;
+color:red;
+}
+h1{
+text-align:center;
+}
+a{
+text-decoration:none;
+padding:10px;
+color:red;
+}
+td
+{
+color:white;
+}
+h2
+{
+color:grey;
+}
+</style>
 </head>
 <body>
+<h1>Share Your Knowledge</h1>
+<a href="adminhome2.jsp">Home</a>
+<a href="viewusers.jsp">view users</a>
+<a href="viewemployee.jsp">view employees</a>
+<a href="viewrequests.jsp">view requests</a>
 <%
 String eid = request.getParameter("empid");
-out.println(eid);
+
 try {
 Connection con = null;
 
@@ -20,7 +47,8 @@ con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project
 int n = con.createStatement().executeUpdate("update employee set status='accepted' where empid="+eid+"");
 
 if(n>0) {
-	response.sendRedirect("viewrequests2.jsp");
+	out.println("<h1>Employee is Added</h1>");
+	
 }
 
 }

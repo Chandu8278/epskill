@@ -26,7 +26,7 @@
             	 
             	 if(rs.getString(1)!=null && rs.getString(2).equals(pwd)){
             	 out.println("<h1 align:center>Login Successfull</h1>");
-            	 response.sendRedirect("home1.jsp");
+            	 response.sendRedirect("employeehome.jsp");
             	 session.setAttribute("email",email);
             	 session.setAttribute("pwd",pwd);
              }

@@ -19,6 +19,7 @@ String mob = request.getParameter("mob");
 String dept = request.getParameter("dept");
 String loc = request.getParameter("loc");
 String status = "not_accepted";
+double rating = 0;
 int id = (int)(Math.random()*99999)+1;
 
 try
@@ -29,7 +30,7 @@ try
   
   //tnsnames.oracle
   con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
-PreparedStatement pstmt = con.prepareStatement(" insert into employee values(?,?,?,?,?,?,?,?,?) ");
+PreparedStatement pstmt = con.prepareStatement(" insert into employee values(?,?,?,?,?,?,?,?,?,?) ");
   
 pstmt.setInt(1, id);
 pstmt.setString(2, name);
@@ -40,6 +41,7 @@ pstmt.setString(6, mob);
 pstmt.setString(7, dept);
 pstmt.setString(8, loc);
 pstmt.setString(9,status);
+pstmt.setDouble(10,rating);
 int n=pstmt.executeUpdate();
 //at a time only one record is inserted so, n=1
 if(n>0)

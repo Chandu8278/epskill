@@ -55,7 +55,11 @@ else
 }
 catch(Exception e)
 {
-  out.println(e);
+   %>
+   <h1>You are alredy registered in this website.</h1>
+   <a href="login.html">Login</a>&nbsp;&nbsp;
+   <a href="register.html">Register</a>
+   <%
 }
 
 %>

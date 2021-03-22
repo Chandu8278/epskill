@@ -37,7 +37,8 @@ if(rs.next()==true) {
 	{
 		%>
 		<h1>Congratulations</h1>
-		<h1>You Response is Accepted Now you are part of Share Your Knowledge</h1>
+		<h1>Your Response has been Accepted, Now you are a part of Share Your Knowledge.</h1><br><br>
+		<a href="login.html">Log In</a>
 		<%
 	}
 	else

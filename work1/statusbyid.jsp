@@ -20,7 +20,7 @@
 <body>
 <h1 id="mainhead" style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;Share Your Knowledge</h1>
 <br><br>
-<h2 id="mainhead" style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;View your status by entering your email</h2>
+<h2 id="mainhead" style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;Check your status by providing your email below</h2>
        <center> <form id="loginform" action="employeestatus.jsp" method="post">
           <br><br>
            Enter Email<br><br>
