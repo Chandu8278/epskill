@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -37,7 +39,10 @@
     <link href="pricing.css" rel="stylesheet">
   </head>
   <body>
-    
+    <%
+    String useremail = request.getParameter("useremail");
+    String empemail = request.getParameter("empemail");
+    %>
 <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
  
  
@@ -65,13 +70,13 @@
         <h4 class="my-0 fw-normal">Free</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">₹0 <small class="text-muted"></small></h1>
+        <h1 class="card-title pricing-card-title">0 <small class="text-muted"></small></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
           </svg>
         </ul>
-        <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="window.location.href='../checkout/index.html'">Demo for free</button>
+        <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="window.location.href='processing.jsp?useremail=<%=useremail %>&empemail=<%=empemail%>'">Demo for free</button>
       </div>
     </div>
     </div>
@@ -81,13 +86,13 @@
         <h4 class="my-0 fw-normal">Hourly</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">₹99 <small class="text-muted">/ hour</small></h1>
+        <h1 class="card-title pricing-card-title">99 <small class="text-muted">/ hour</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
           </svg>
         </ul>
-        <button type="button" class="w-100 btn btn-lg btn-primary" onclick="window.location.href='../checkout/index.html'">Book Now</button>
+        <button type="button" class="w-100 btn btn-lg btn-primary" onclick="window.location.href='processing.jsp?useremail=<%=useremail %>&empemail=<%=empemail%>'">Book Now</button>
       </div>
     </div>
     </div>
@@ -97,13 +102,13 @@
         <h4 class="my-0 fw-normal">Monthly</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">₹1999 <small class="text-muted">month</small></h1>
+        <h1 class="card-title pricing-card-title">1999 <small class="text-muted">month</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
           </svg>
         </ul>
-        <button type="button" class="w-100 btn btn-lg btn-primary" onclick="window.location.href='../checkout/index.html'">Book Now</button>
+        <button type="button" class="w-100 btn btn-lg btn-primary" onclick="window.location.href='processing.jsp?useremail=<%=useremail %>&empemail=<%=empemail%>'">Book Now</button>
       </div>
     </div>
     </div>
@@ -116,3 +121,4 @@
     
   </body>
 </html>
+    

@@ -23,6 +23,9 @@ color:red;
 <body>
 <%
 String name = request.getParameter("name");
+String email = (String)session.getAttribute("email");
+session.setAttribute("email",email);
+if(email!=null){
 %>
 <h1>Welcome admin:<%=name %></h1>
 <div>
@@ -30,10 +33,25 @@ String name = request.getParameter("name");
 <a href="viewusers.jsp">view users</a>
 <a href="viewemployee.jsp">view employees</a>
 <a href="viewrequests.jsp">view requests</a>
+<a href="logout.jsp"><button onclick="myLogout()"  type="button" class="btn btn-info" >Log out</button></a>
+
 </div>
 <br>
 <center>
 <img src="admin.jpg" width="95%">
 </center>
+<script>
+        function myLogout(){
+        	alert("You are being Loged out");
+        }
+        </script>
+<%
+}
+else
+{
+	response.sendRedirect("adminlogin.html");
+}
+%>
+
 </body>
 </html>

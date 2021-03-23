@@ -36,6 +36,10 @@ color:grey;
 <a href="viewusers.jsp">view users</a>
 <a href="viewemployee.jsp">view employees</a>
 <a href="viewrequests.jsp">view requests</a>
+<div id="button_of">
+<a href="logout.jsp"><button onclick="myLogout()"  type="button" class="btn btn-info" >Log out</button></a>
+            </div>
+            &nbsp;&nbsp;
 <%
 try {
 			

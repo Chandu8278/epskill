@@ -16,32 +16,30 @@
 			Connection con = null;
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
-            PreparedStatement pstmt = con.prepareStatement("select email,password from registeruser where email=?");
+            PreparedStatement pstmt = con.prepareStatement("select email,password from employee where email=? and password=?");
             pstmt.setString(1,email);
-            
+            pstmt.setString(2,pwd);
 			
 			ResultSet rs = pstmt.executeQuery(); 
 			
              if(rs.next()==true) {
             	 
-            	 if(rs.getString(1)!=null && rs.getString(2).equals(pwd)){
+            	 
             	 out.println("<h1 align:center>Login Successfull</h1>");
-            	 response.sendRedirect("employeehome.jsp");
+            	 
             	 session.setAttribute("email",email);
-            	 session.setAttribute("pwd",pwd);
-             }
-             else if(rs.getString(1)!=null && rs.getString(2)!=pwd)
-             {
-              response.sendRedirect("login2.jsp?email="+email+"");
+            	 
+            	 response.sendRedirect("employeehome.jsp");
              }
              
-		   }
+             
+		   
 		   else 
            {
              response.sendRedirect("register2.html");
            }
 			
-			
+             
 		}
 		catch(Exception e) {
 			out.println(e);

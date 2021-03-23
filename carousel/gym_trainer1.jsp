@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="javax.servlet.*,java.sql.*,java.io.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -30,21 +29,22 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
-      }
-      td,th{
+        td,th{
         padding:20px;
         }
         #txt{
         width:500px;
         border-radius:10px;
         }
-         form{
+        form{
         float:left;
         }
         butoon{
         
         float:left;
         }
+        
+      }
     </style>
 
     
@@ -56,7 +56,7 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Gym Trainer</a>
+      <a class="navbar-brand" href="#">Home Tutor</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -89,16 +89,16 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" /><img src="../work/home_tutor_09.png"></svg>
+        <svg class="bd-placeholder-img" width="70%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" /><img src="../work/home_tutor_09.png"></svg>
 
       </div>
       <div class="carousel-item">
-        <svg  class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" /><img src="../work/home_tutor_03.jfif"></svg>
+        <svg  class="bd-placeholder-img" width="70%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" /><img src="../work/home_tutor_03.jfif"></svg>
 
         
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" /><img src="../work/home_tutor_04.jfif"></svg>
+        <svg class="bd-placeholder-img" width="70%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" /><img src="../work/home_tutor_04.jfif"></svg>
 
         
       </div>
@@ -125,21 +125,21 @@
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><img  src="../work/cource_1.png" width="150px" height="150px" style="border-radius: 100px; margin-left:-120px;"></svg>
 
-        <h2>Dr.Yeshwanth Reddy</h2>
+        <h2>Name</h2>
         <p>Details</p>
         <p><a class="btn btn-secondary" href="../pricing/index.html" role="button">Book Now! &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><img  src="../work/cource_3.png" width="150px" height="150px" style="border-radius: 100px; margin-left:-120px;"></svg>
 
-        <h2>Mrs.Sheela</h2>
+        <h2>Name</h2>
         <p>Details</p>
         <p><a class="btn btn-secondary" href="../pricing/index.html" role="button">Book Now! &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><img  src="../work/comment_2.png" width="150px" height="150px" style="border-radius: 100px; margin-left:-120px;"></svg>
 
-        <h2>Mr.Chandra Sekhar</h2>
+        <h2>Name</h2>
         <p>Details</p>
         <p><a class="btn btn-secondary" href="../pricing/index.html" role="button">Book Now! &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
@@ -171,32 +171,30 @@
 
 
     <!-- START THE FEATURETTES -->
-     
-      <hr class="featurette-divider">
-      
-      <form action="gym_trainer.jsp" method="post">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <hr class="featurette-divider">
+    <form action="gym_trainer.jsp" method="post">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input id="txt" type="text" name="searchname" placeholder="Enter Location/Name">
     <input type="submit" value="Search">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
     </form>
-<button onclick="location.href = 'gym_trainer1.jsp';">SortByLocation</button>
+    <button onclick="location.href = 'gym_trainer1.jsp';">SortByLocation</button>
     <button>SortByRating</button>
     <%
 try {
+	        String email = (String)session.getAttribute("email");
+	
+			String variable =  request.getParameter("searchname");
+			String srt = request.getParameter("sort");
+			Connection con = null;
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-	String variable =  request.getParameter("searchname");
-	
-	Connection con = null;
-	Class.forName("oracle.jdbc.driver.OracleDriver");
-	
-	
-	con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
-	PreparedStatement pstmt;
-	
-	pstmt = con.prepareStatement("select * from employee where status='accepted' order by location");
-	
+			
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","project","project");
+			PreparedStatement pstmt;
+			pstmt = con.prepareStatement("select * from employee where status='accepted' order by location");
+			
 			ResultSet rs = pstmt.executeQuery();
 			
 			 out.println("<h2 align=center></h2>");
@@ -225,7 +223,8 @@ try {
 				out.println("<td>"+rs.getString(6)+"</td>");
 			
 				out.println("<td>"+rs.getString(8)+"</td>");
-				out.println("<td><a href='../pricing/index.html'>Book Now</a></td>");
+				out.println("<td><a href='../pricing/index.jsp?useremail="+email+"&empemail="+rs.getString(4)+"'>Book Now</a></td>");
+
 			}
 			out.println("</table>");
 			
@@ -234,9 +233,7 @@ try {
 			out.println(e); 
 		}
 %>
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
+    
+   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>   
   </body>
 </html>

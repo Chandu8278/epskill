@@ -183,6 +183,7 @@
     <button>SortByRating</button>
     <%
 try {
+	        String email = (String)session.getAttribute("email");
 	
 			String variable =  request.getParameter("searchname");
 			String srt = request.getParameter("sort");
@@ -222,7 +223,8 @@ try {
 				out.println("<td>"+rs.getString(6)+"</td>");
 			
 				out.println("<td>"+rs.getString(8)+"</td>");
-				out.println("<td><a href='../pricing/index.html'>Book Now</a></td>");
+				out.println("<td><a href='../pricing/index.jsp?useremail="+email+"&empemail="+rs.getString(4)+"'>Book Now</a></td>");
+
 			}
 			out.println("</table>");
 			

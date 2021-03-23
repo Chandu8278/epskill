@@ -179,12 +179,7 @@
 
     <!-- START THE FEATURETTES -->
     <hr class="featurette-divider">
-    <center>
-    <div id="middle_sentence">
-    <p>If you didn't know anyone specifically to book a slot with a particular tutor then you can directly click here to book any of the tutors in this website</p>
-    <p><a class="btn btn-secondary" href="../pricing/index.html" role="button">Book Now! &raquo;</a></p>
-    </div>
-    </center>
+   
     <br><br>
     <form action="index.jsp" method="post">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -199,7 +194,9 @@
     <button>SortByRating</button>
     <%
 try {
-	
+	        String email = (String)session.getAttribute("email");
+	        session.setAttribute("email",email);
+	        
 			String variable =  request.getParameter("searchname");
 			
 			Connection con = null;
@@ -246,7 +243,7 @@ try {
 				out.println("<td>"+rs.getString(6)+"</td>");
 			
 				out.println("<td>"+rs.getString(8)+"</td>");
-				out.println("<td><a href='../pricing/index.html'>Book Now</a></td>");
+				out.println("<td><a href='../pricing/index.jsp?useremail="+email+"&empemail="+rs.getString(4)+"'>Book Now</a></td>");
 			}
 			out.println("</table>");
 			

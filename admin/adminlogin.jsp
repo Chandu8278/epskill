@@ -27,6 +27,7 @@
             	 
             	 //out.println("<h1 align:center>Login Successfull</h1>");
             	 response.sendRedirect("adminhome.jsp?name="+rs.getString(1)+"");
+            	 session.setAttribute("email",email);
              }
              
 		   else 

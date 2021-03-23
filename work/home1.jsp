@@ -143,7 +143,7 @@
 		
 		ResultSet rs = pstmt.executeQuery(); 
 		if(rs.next()!=true){}
-		
+		session.setAttribute("email", email);
 	
     
     
