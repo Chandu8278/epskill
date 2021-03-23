@@ -36,7 +36,7 @@
 		   
 		   else 
            {
-             response.sendRedirect("register2.html");
+             response.sendRedirect("login.jsp");
            }
 			
              
